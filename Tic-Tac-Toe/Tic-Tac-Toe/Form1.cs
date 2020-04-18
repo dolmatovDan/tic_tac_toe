@@ -39,33 +39,25 @@ namespace Tic_Tac_Toe
         }
         private string check()
         {
-            if (arr[0].BackgroundImage == Properties.Resources.x2 && arr[1].BackgroundImage == Properties.Resources.x2 && arr[2].BackgroundImage == Properties.Resources.x2)
+            int x = 0;
+            for (int i = 0; i < 2; i++)
             {
-                return "Yes";
-            }
-            else if(arr[3].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[5].BackgroundImage == Properties.Resources.x2)
-            {
-                return "Yes";
-            }
-            else if (arr[6].BackgroundImage == Properties.Resources.x2 && arr[7].BackgroundImage == Properties.Resources.x2 && arr[8].BackgroundImage == Properties.Resources.x2)
-            {
-                return "Yes";
+                if(arr[i * 3].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + 1].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + 2].BackgroundImage == Properties.Resources.x2)
+                {
+                    return "Yes";
+                }
             }
             //
-            else if (arr[3].BackgroundImage == Properties.Resources.x2 && arr[0].BackgroundImage == Properties.Resources.x2 && arr[6].BackgroundImage == Properties.Resources.x2)
+            for (int i = 0; i < 2; i++)
             {
-                return "Yes";
-            }
-            else if (arr[1].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[7].BackgroundImage == Properties.Resources.x2)
-            {
-                return "Yes";
-            }
-            else if (arr[2].BackgroundImage == Properties.Resources.x2 && arr[5].BackgroundImage == Properties.Resources.x2 && arr[8].BackgroundImage == Properties.Resources.x2)
-            {
-                return "Yes";
+                if (arr[x].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + x].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + x].BackgroundImage == Properties.Resources.x2)
+                {
+                    return "Yes";
+                }
+                x++;
             }
             //
-            else if (arr[0].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[8].BackgroundImage == Properties.Resources.x2)
+            if (arr[0].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[8].BackgroundImage == Properties.Resources.x2)
             {
                 return "Yes";
             }
@@ -78,43 +70,31 @@ namespace Tic_Tac_Toe
             //////
             ///
 
-            else if (arr[0].BackgroundImage == Properties.Resources.o && arr[1].BackgroundImage == Properties.Resources.o && arr[2].BackgroundImage == Properties.Resources.o)
+            x = 0;
+            for (int i = 0; i < 2; i++)
             {
-                return "No";
-            }
-            else if (arr[3].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[5].BackgroundImage == Properties.Resources.o)
-            {
-                return "No";
-            }
-            else if (arr[6].BackgroundImage == Properties.Resources.o && arr[7].BackgroundImage == Properties.Resources.o && arr[8].BackgroundImage == Properties.Resources.o)
-            {
-                return "No";
+                if (arr[i * 3].BackgroundImage == Properties.Resources.o && arr[i * 3 + 1].BackgroundImage == Properties.Resources.o && arr[i * 3 + 2].BackgroundImage == Properties.Resources.o)
+                {
+                    return "No";
+                }
             }
             //
-            else if (arr[3].BackgroundImage == Properties.Resources.o && arr[0].BackgroundImage == Properties.Resources.o && arr[6].BackgroundImage == Properties.Resources.o)
+            for (int i = 0; i < 2; i++)
             {
-                return "No";
-            }
-            else if (arr[1].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[7].BackgroundImage == Properties.Resources.o)
-            {
-                return "No";
-            }
-            else if (arr[2].BackgroundImage == Properties.Resources.o && arr[5].BackgroundImage == Properties.Resources.o && arr[8].BackgroundImage == Properties.Resources.o)
-            {
-                return "No";
+                if (arr[x].BackgroundImage == Properties.Resources.o && arr[i * 3 + x].BackgroundImage == Properties.Resources.o && arr[i * 3 + x].BackgroundImage == Properties.Resources.o)
+                {
+                    return "No";
+                }
+                x++;
             }
             //
-            else if (arr[0].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[8].BackgroundImage == Properties.Resources.o)
+            if (arr[0].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[8].BackgroundImage == Properties.Resources.o)
             {
                 return "No";
             }
             else if (arr[2].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[6].BackgroundImage == Properties.Resources.o)
             {
                 return "No";
-            }
-            else
-            {
-                return "?";
             }
         }
 
