@@ -37,14 +37,15 @@ namespace Tic_Tac_Toe
             }
             arr[numb].BackgroundImage = Properties.Resources.o;
         }
-        private string check()
+        private void check()
         {
             int x = 0;
+            string res = "";
             for (int i = 0; i < 2; i++)
             {
                 if(arr[i * 3].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + 1].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + 2].BackgroundImage == Properties.Resources.x2)
                 {
-                    return "Yes";
+                    res = "Yes";
                 }
             }
             //
@@ -52,18 +53,18 @@ namespace Tic_Tac_Toe
             {
                 if (arr[x].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + x].BackgroundImage == Properties.Resources.x2 && arr[i * 3 + x].BackgroundImage == Properties.Resources.x2)
                 {
-                    return "Yes";
+                    res = "Yes";
                 }
                 x++;
             }
             //
             if (arr[0].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[8].BackgroundImage == Properties.Resources.x2)
             {
-                return "Yes";
+                res = "Yes";
             }
             else if (arr[2].BackgroundImage == Properties.Resources.x2 && arr[4].BackgroundImage == Properties.Resources.x2 && arr[6].BackgroundImage == Properties.Resources.x2)
             {
-                return "Yes";
+                res = "Yes";
             }
             //
             ////
@@ -75,7 +76,7 @@ namespace Tic_Tac_Toe
             {
                 if (arr[i * 3].BackgroundImage == Properties.Resources.o && arr[i * 3 + 1].BackgroundImage == Properties.Resources.o && arr[i * 3 + 2].BackgroundImage == Properties.Resources.o)
                 {
-                    return "No";
+                    res = "No";
                 }
             }
             //
@@ -83,28 +84,24 @@ namespace Tic_Tac_Toe
             {
                 if (arr[x].BackgroundImage == Properties.Resources.o && arr[i * 3 + x].BackgroundImage == Properties.Resources.o && arr[i * 3 + x].BackgroundImage == Properties.Resources.o)
                 {
-                    return "No";
+                    res = "No";
                 }
                 x++;
             }
             //
             if (arr[0].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[8].BackgroundImage == Properties.Resources.o)
             {
-                return "No";
+                res = "No";
             }
             else if (arr[2].BackgroundImage == Properties.Resources.o && arr[4].BackgroundImage == Properties.Resources.o && arr[6].BackgroundImage == Properties.Resources.o)
             {
-                return "No";
+                res = "No"; ;
             }
-        }
-
-        private void check_check(string a)
-        {
-            if(a == "Yes")
+            if (res == "Yes")
             {
                 label1.Text = "Ты выйграл!!!";
             }
-            else if(a == "Yes")
+            else if (res == "Yes")
             {
                 label1.Text = "Ты проиграл(((";
             }
@@ -112,20 +109,18 @@ namespace Tic_Tac_Toe
             {
                 label1.Text = "_____________";
             }
-            
         }
+
+        
         
         private void button1_Click(object sender, EventArgs e)
         {
             if (arr[0].BackgroundImage != Properties.Resources.x2 && arr[0].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[0]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -133,13 +128,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[1].BackgroundImage != Properties.Resources.x2 && arr[1].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[1]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -147,13 +139,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[2].BackgroundImage != Properties.Resources.x2 && arr[2].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
-                click(arr[2]);
-
-                check_check(x);
+                click(arr[0]);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -161,13 +150,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[3].BackgroundImage != Properties.Resources.x2 && arr[3].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[3]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -175,13 +161,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[4].BackgroundImage != Properties.Resources.x2 && arr[4].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[4]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -189,13 +172,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[5].BackgroundImage != Properties.Resources.x2 && arr[5].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[5]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -203,13 +183,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[6].BackgroundImage != Properties.Resources.x2 && arr[6].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[6]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -217,13 +194,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[7].BackgroundImage != Properties.Resources.x2 && arr[7].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[7]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
 
@@ -231,13 +205,10 @@ namespace Tic_Tac_Toe
         {
             if (arr[8].BackgroundImage != Properties.Resources.x2 && arr[8].BackgroundImage != Properties.Resources.o)
             {
-                string x = check();
                 click(arr[8]);
-
-                check_check(x);
+                check();
                 pc_click();
-
-                check_check(x);
+                check();
             }
         }
     }
